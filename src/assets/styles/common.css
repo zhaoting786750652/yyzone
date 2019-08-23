@@ -1,0 +1,17 @@
+html{
+    font-size: -moz-calc(100vw / 750 * 100);
+    font-size: -webkit-calc(100vw / 750 * 100);
+    font-size: calc(100vw / 750 * 100);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    background-color: #fff;
+    font-family: PingFang SC,Noto Sans;
+}
+body{
+    font-size: 12px;
+}
+*{
+    box-sizing: border-box;
+}
