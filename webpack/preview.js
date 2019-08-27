@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: zhaiyba@yonyou.com
  * @Date: 2019-04-11 16:56:07
- * @LastEditTime: 2019-08-23 14:36:22
+ * @LastEditTime: 2019-08-27 19:51:37
  * @LastEditors: zhaiyba@yonyou.com
  */
 var path = require('path')
@@ -10,19 +10,19 @@ var webpack = require('webpack')
 var merge = require('webpack-merge')
 var config = require('./base.js')
 var ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin')
-// var ImageminPlugin = require('imagemin-webpack-plugin').default
+var ImageminPlugin = require('imagemin-webpack-plugin').default
 
-// config.plugins.push(
-//     new ImageminPlugin({
-//         test: /\.(jpe?g|png|gif|svg)$/i,
-//         optipng: {
-//             optimizationLevel: 6,
-//         },
-//         pngquant: {
-//             quality: '95-100'
-//         }
-//     }),
-// )
+config.plugins.push(
+    new ImageminPlugin({
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        optipng: {
+            optimizationLevel: 6,
+        },
+        pngquant: {
+            quality: '95-100'
+        }
+    }),
+)
 
 module.exports = merge(config, {
     devtool: 'source-map',
@@ -43,6 +43,22 @@ module.exports = merge(config, {
                     }
                 }
             }),
-        ]
+        ],
+        runtimeChunk: {
+            'name': 'manifest',
+        },
+        splitChunks: {
+            chunks: 'all',
+            cacheGroups:{
+                vendor: {
+                    name: 'vendor',
+                    chunks: 'async',
+                    minChunks: 2,
+                    priority: 10,
+                    reuseExistingChunk: true,
+                    enforce: true,
+                }
+            }
+        },
     },
 })
