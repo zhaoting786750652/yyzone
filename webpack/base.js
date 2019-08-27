@@ -2,7 +2,7 @@
  * @Author: zhaiyba@yonyou.com
  * @Date: 2019-08-01 10:19:02
  * @LastEditors: zhaiyba@yonyou.com
- * @LastEditTime: 2019-08-23 17:32:58
+ * @LastEditTime: 2019-08-27 19:48:57
  * @Description: file content
  */
 
@@ -84,7 +84,7 @@ const WEBPACK_CONFIG = {
                 exclude: /^node_modules$/,
             },
             {
-                test: /\.(le|c)ss$/,
+                test: /\.less$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
@@ -96,6 +96,21 @@ const WEBPACK_CONFIG = {
                     POSTCSS_LOADER,
                     'less-loader',
                     STYLE_RESOURCES_LOADER,
+                ],
+                include: APP_SRC,
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: '../',
+                        },
+                    },
+                    'css-loader',
+                    POSTCSS_LOADER,
                 ],
                 include: APP_SRC,
                 exclude: /node_modules/,
