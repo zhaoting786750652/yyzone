@@ -18,7 +18,7 @@ import './assets/styles/common';
 import lang from './assets/lang/';
 import utils from './utils/';
 
-Vue.prototype.$http = axios;
+// Vue.prototype.$http = axios;
 Vue.prototype.Utils = utils
 
 

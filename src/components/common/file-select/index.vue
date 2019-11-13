@@ -51,6 +51,7 @@
 <script>
 import Config from '../../../config/config';
 import Lang from '../../../assets/lang/index'
+import axios from '../../../config/http';
 export default {
     name: 'fileSelect',
     props:{
@@ -98,10 +99,9 @@ export default {
         getList(type){
             this.activeTab = type;
             this.dataList = [];
-            this.$http.get(`${this.host}/${this.url[type]}?v=1.0&count=99&qzid=0&page=1`).then((res) => {
+            axios.get(`${this.host}/${this.url[type]}?v=1.0&count=99&qzid=0&page=1`).then((res) => {
                 if(res&&res.data.code ===0 ){
                     this.dataList = res.data.data||[];
-                    console.log(this.dataList,'this.dataList')
                     this.dataList.forEach((v,k)=>{
                         this.checked[k] = false;
                     })
