@@ -22,7 +22,7 @@
                                     <div class="td">{{local.lastUpdatedAt}}</div>                                            
                                 </div>                                        
                             </div>                                        
-                            <div class="tbody" v-if="dataList&&checked">
+                            <div class="tbody" v-if="dataList">
                                 <div class="tr" v-for="(v,k) in dataList" :key="k">
                                     <div class="td" :title="v.title+'.'+v.fileext">
                                         <input type="checkbox" name="file-box-checkbox" :value="checked[k]" v-model="checked[k]" :id="v.fid">
@@ -101,6 +101,7 @@ export default {
             this.$http.get(`${this.host}/${this.url[type]}?v=1.0&count=99&qzid=0&page=1`).then((res) => {
                 if(res&&res.data.code ===0 ){
                     this.dataList = res.data.data||[];
+                    console.log(this.dataList,'this.dataList')
                     this.dataList.forEach((v,k)=>{
                         this.checked[k] = false;
                     })
