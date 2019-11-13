@@ -21,5 +21,6 @@ module.exports = {
     production: {
         phpApi: 'https://web-api.yonyoucloud.com',
         javaApi: 'https://ezone.yonyoucloud.com',
-    }
+    },
+    
 }

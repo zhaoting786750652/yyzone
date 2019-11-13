@@ -17,7 +17,7 @@
             </template>
         </app-card> -->
         <div @click="openFileSelect">点击调用文件弹框</div>
-        <file-select v-model="showModal" @on-ok="handleOk" currentContext="test" lang="zh_cn"></file-select>
+        <file-select v-model="showModal" @on-ok="handleOk" host="http://web.api.chaoke.com:6062" lang="zh_cn"></file-select>
     </div>
 </template>
 

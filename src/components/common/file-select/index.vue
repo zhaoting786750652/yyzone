@@ -58,9 +58,9 @@ export default {
             type: Boolean,
             default: false
         },
-        currentContext:{
+        host:{
             type: String,
-            default: 'test'//test,prevProduction,production
+            default: 'http://web.api.chaoke.com:6062'//test,prevProduction,production
         },
         lang:{
             type: String,
@@ -98,7 +98,7 @@ export default {
         getList(type){
             this.activeTab = type;
             this.dataList = [];
-            this.$http.get(`${Config[this.currentContext].phpApi}/${this.url[type]}?v=1.0&count=99&qzid=0&page=1`).then((res) => {
+            this.$http.get(`${this.host}/${this.url[type]}?v=1.0&count=99&qzid=0&page=1`).then((res) => {
                 if(res&&res.data.code ===0 ){
                     this.dataList = res.data.data||[];
                     this.dataList.forEach((v,k)=>{
