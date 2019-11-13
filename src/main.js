@@ -16,9 +16,11 @@ import axios from './config/http';
 import App from './App';
 import './assets/styles/common';
 import lang from './assets/lang/';
-import Utils from './utils/';
+import utils from './utils/';
 
 Vue.prototype.$http = axios;
+Vue.prototype.Utils = utils
+
 
 // 设置路由
 Vue.use(VueRouter);
@@ -28,7 +30,7 @@ const router = new VueRouter({
 
 // 设置多语言
 Vue.use(VueI18n);
-let locale = Utils.getLanguage();
+let locale = utils.getLanguage();
 const i18n = new VueI18n({
     locale,
     messages: lang,

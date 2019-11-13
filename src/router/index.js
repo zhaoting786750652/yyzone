@@ -13,11 +13,11 @@ const routes = [
         name: 'Index',
         component: () => import('../views/index.vue'),
     },
-    {
-        path: '/detail',
-        name: 'Detail',
-        component: () => import('../views/detail.vue'),
-    }
+    // {
+    //     path: '/detail',
+    //     name: 'Detail',
+    //     component: () => import('../views/detail.vue'),
+    // }
   ];
 
 export default routes;

@@ -7,19 +7,19 @@
  */
 module.exports = {
     development: {
-        phpApi: 'http://h5.api.chaoke.com:6062',
+        phpApi: 'http://web.api.chaoke.com:6062',
         javaApi: 'http://123.103.9.204:6058',
     },
     test: {
-        phpApi: 'http://h5.api.chaoke.com:6062',
+        phpApi: 'http://web.api.chaoke.com:6062',
         javaApi: 'http://123.103.9.204:6058',
     },
     prevProduction: {
-        phpApi: 'https://h5-api.esn.ren',
+        phpApi: 'https://web-api.esn.ren',
         javaApi: 'https://ezone.esn.ren',
     },
     production: {
-        phpApi: 'https://h5-api.yonyoucloud.com',
+        phpApi: 'https://web-api.yonyoucloud.com',
         javaApi: 'https://ezone.yonyoucloud.com',
     }
 }

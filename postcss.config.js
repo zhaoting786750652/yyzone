@@ -8,6 +8,6 @@
 module.exports = {
     plugins: [
         require('autoprefixer'),
-        require('postcss-px2rem')({remUnit: 100}),
+        // require('postcss-px2rem')({remUnit: 100}),
     ]
 };

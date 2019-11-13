@@ -7,6 +7,8 @@
  */
 import axios from 'axios';
 import Config from './config';
+const BASE_URL = 'http://web.api.chaoke.com:6062/'
+
 
 /**
  * @description: 获取后台接口的绝对路径
@@ -16,9 +18,13 @@ import Config from './config';
 function getUrl(url = ''){
     let env = Config[__ENV__];
     if(!/[http|https]:\/\//gi.test(url)){
-        url = url.replace(/^\[(\w+)\]?/g, (reg, key) => {
-            return env[key] || '';
-        });
+        if (__ENV__ === 'development') {
+            // url = BASE_URL + url
+        }else{
+            // url = url.replace(/^\[(\w+)\]?/g, (reg, key) => {
+            //     return env[key] || '';
+            // });
+        }
     }
     return url;
 }
@@ -32,6 +38,7 @@ async function getConfig(config){
 
 axios.interceptors.request.use(
     async config => {
+        config.withCredentials = true
         return await getConfig(config)
     },
     error => {

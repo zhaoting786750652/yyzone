@@ -7,7 +7,7 @@
  -->
 <template>
     <div class="page-index">
-        <h3>{{$t('pageIndex.title')}}</h3>
+        <!-- <h3>{{$t('pageIndex.title')}}</h3>
         <app-card>
             <template slot="headerLeft">卡片</template>
             <template slot="headerRight">更多</template>
@@ -15,22 +15,34 @@
             <template slot="footer">
                 <router-link :to="{name: 'Detail'}">{{$t('pageDetail.title')}}</router-link>
             </template>
-        </app-card>
+        </app-card> -->
+        <div @click="openFileSelect">点击调用文件弹框</div>
+        <file-select v-model="showModal" @on-ok="handleOk" currentContext="test" lang="zh_cn"></file-select>
     </div>
 </template>
 
 <script>
-const AppCard = () => import('@/components/common/card/index')
+// const AppCard = () => import('@/components/common/card/index')
+const FileSelect = () => import('@/components/common/file-select/index')
 
 export default {
     data(){
         return {
-
+            showModal:false
         }
     },
     components: {
-        AppCard,
+        // AppCard,
+        FileSelect
     },
+    methods:{
+        openFileSelect(){
+            this.showModal = true;
+        },
+        handleOk(res){
+            console.log(res,'res')
+        }
+    }
 }
 </script>
 

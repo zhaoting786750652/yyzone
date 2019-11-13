@@ -50,8 +50,8 @@ const WEBPACK_CONFIG = {
     },
     output: {
         path: APP_DIST,
-        filename: 'js/[name].[contenthash].js',
-        chunkFilename: 'js/[name].[contenthash].js',
+        filename: 'js/[name].js',
+        chunkFilename: 'js/[name].js',
         publicPath: './',
     },
     resolve: {

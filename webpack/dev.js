@@ -9,7 +9,7 @@ const webpack = require('webpack')
 const config = require('./base.js')
 const WebpackDevServer = require('webpack-dev-server')
 
-const host = 'http://localhost';
+const host = 'http://test.chaoke.com';
 const port = 8080;
 
 config.entry.app.unshift('webpack-dev-server/client?' + host + ':' + port)

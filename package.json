@@ -1,7 +1,7 @@
 {
-  "name": "workbench",
+  "name": "yy-file-select",
   "version": "1.0.0",
-  "description": "",
+  "description": "file select",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./dist && npm install",
@@ -10,7 +10,7 @@
     "prev-build": "npm run clean && cross-env NODE_ENV=preview webpack -p --config ./webpack/preview.js",
     "prod-build": "npm run clean && cross-env NODE_ENV=production webpack -p --config ./webpack/production.js"
   },
-  "author": "",
+  "author": "zhaoting",
   "license": "ISC",
   "browserslist": [
     "> 1%",
