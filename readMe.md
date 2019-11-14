@@ -1,5 +1,5 @@
 ## 说明
-友空间内部使用的文件上传组件
+友空间内部使用的文件上传组件,文件来源于文库
 # Author
 zhaoting
 
@@ -8,7 +8,7 @@ npm install @yzone/yy-file-select
 
 ``` javascript
 <template>
-<file-select v-model="showModal" @on-ok="handleOk" currentContext="test" lang="zh_cn">
+<file-select v-model="showModal" @on-ok="handleOk" host="http://web.api.chaoke.com:6062" lang="zh_cn">
 </file-select>
 </template>
 import FileSelect from '@yzone/yy-file-select'
