@@ -11,15 +11,10 @@ import VueRouter from 'vue-router';
 import routes from './router/';
 import store from "./store/"
 import VueI18n from 'vue-i18n';
-import axios from './config/http';
 
 import App from './App';
 import './assets/styles/common';
 import lang from './assets/lang/';
-import utils from './utils/';
-
-// Vue.prototype.$http = axios;
-Vue.prototype.Utils = utils
 
 
 // 设置路由

@@ -1,6 +1,6 @@
 {
   "name": "@yzone/yy-file-select",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "file select",
   "main": "index.js",
   "scripts": {

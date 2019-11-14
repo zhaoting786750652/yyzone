@@ -49,9 +49,10 @@
 </template>
 
 <script>
-import Config from '../../../config/config';
 import Lang from '../../../assets/lang/index'
 import axios from '../../../config/http';
+import Utils from '../../../utils/index';
+
 export default {
     name: 'fileSelect',
     props:{
