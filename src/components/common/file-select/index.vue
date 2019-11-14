@@ -33,7 +33,7 @@
                                     <div class="td" :title="v.fname">
                                         <span class="ellipsis author">{{v.name}}</span>
                                     </div>
-                                    <div class="td">{{Utils.formatTime(v.updatetime*1000)}}</div>
+                                    <div class="td">{{getDateTime(v.updatetime*1000)}}</div>
                                 </div>    
                             </div>                                    
                         </div>                                
@@ -88,6 +88,9 @@ export default {
         }
     },
     methods:{
+        getDateTime (dateline) {
+            return Utils.formatTime(dateline);
+        },
         bytesToSize(bytes){
             if (bytes === 0){
                 return '0 KB';
